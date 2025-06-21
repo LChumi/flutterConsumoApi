@@ -28,7 +28,7 @@ final GoRouter _router = GoRouter(routes: [
     builder: (context, state) => const Home(),
   ),
 ]);
-2
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
