@@ -1,5 +1,6 @@
 import 'package:app_chumi/api/api_constats.dart';
-import 'package:app_chumi/models/UsuarioModel.dart';
+import 'package:app_chumi/models/Usuario.dart';
+import 'package:app_chumi/models/UsuarioRequest.dart';
 import 'package:dio/dio.dart';
 
 class UsuarioApi {
@@ -9,20 +10,29 @@ class UsuarioApi {
 
   String baseUrl = ApiConstants.apiUrl;
 
-  Future<UsuarioModel> login(String username, String password) async {
-    String loginUrl = '$baseUrl/assist/login$username/$password';
+  Future<Usuario> login(UsuarioRequest request) async {
+    String loginUrl = '$baseUrl/assist/login';
     try {
-      final response = await _dio.get(loginUrl);
+      final response = await _dio.post(
+          loginUrl,
+        data: request.toJson(),
+        options: Options(
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          }
+        )
+      );
       
       if (response.statusCode == 202) {
         final data = response.data;
-        final usuario = UsuarioModel.fromJson(data);
+        final usuario = Usuario.fromJson(data);
         return usuario;
       } else {
-        throw Exception('Failed to loguin');
+        throw Exception('Login fallido: código ${response.statusCode}');
       }
     } catch (e) {
-      throw Exception('Error');
+      throw Exception('Error al iniciar sesión: $e');
     }
   }
 }

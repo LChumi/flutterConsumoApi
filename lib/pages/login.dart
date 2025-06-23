@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:app_chumi/api/usuario_api.dart';
+import 'package:app_chumi/models/UsuarioRequest.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -55,12 +56,15 @@ class _LoginState extends State<Login> {
   }
 
   void login() async {
-    String username = usuarioController.text;
-    String password = passwordController.text;
+    final String username = usuarioController.text;
+    final String password = passwordController.text;
+
+    final request = UsuarioRequest(nombreUsuario: username, clave: password);
 
     try {
-      final usuario = await usuarioApi.login(username, password);
-      mensajeOk(usuario.usr_nombre);
+      final usuario = await usuarioApi.login(request);
+      if(!context.mounted) return;
+      mensajeOk(usuario.nombre);
       goToInicio();
     } catch (e) {
       mensajeError();
@@ -154,7 +158,7 @@ class _LoginState extends State<Login> {
                   child: FloatingActionButton(
                     backgroundColor: const Color(0xFF4073AE),
                     onPressed: () {
-                      goToInicio();
+                      login();
                     },
                     child: const Icon(Icons.arrow_forward_ios),
                   ),
