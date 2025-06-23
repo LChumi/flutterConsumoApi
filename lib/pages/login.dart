@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quickalert/quickalert.dart';
 
 class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+  const Login({super.key});
 
   @override
   State<Login> createState() => _LoginState();

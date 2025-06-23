@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class Inicio extends StatefulWidget {
-  const Inicio({Key? key}) : super(key: key);
+  const Inicio({super.key});
 
   @override
   State<Inicio> createState() => _InicioState();

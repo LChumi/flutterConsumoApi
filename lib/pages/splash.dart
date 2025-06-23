@@ -6,7 +6,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 void main() => runApp( const Splash());
 
 class Splash extends StatelessWidget {
-   const Splash({Key? key}) : super(key: key);
+   const Splash({super.key});
 
   @override
   Widget build(BuildContext context) {

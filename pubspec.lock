@@ -90,10 +90,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
+      sha256: "3105dc8492f6183fb076ccf1f351ac3d60564bff92e20bfc4af9cc1651f4e7e1"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.3"
+    version: "6.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -108,10 +108,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: edbceb4c06758652fc9d12e58edb371cd977011b032e298dae0eb357167baad2
+      sha256: "02ff498f6279470ff7f60c998a69b872f26696ceec237c8402e63a2133868ddf"
       url: "https://pub.dev"
     source: hosted
-    version: "9.1.1"
+    version: "15.2.3"
   http:
     dependency: "direct main"
     description:
@@ -156,10 +156,10 @@ packages:
     dependency: transitive
     description:
       name: lints
-      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
+      sha256: a5e2b223cb7c9c8efdc663ef484fdd95bb243bff242ef5b13e26883547fce9a0
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "6.0.0"
   logging:
     dependency: transitive
     description:
@@ -318,5 +318,5 @@ packages:
     source: hosted
     version: "1.1.1"
 sdks:
-  dart: ">=3.7.0-0 <4.0.0"
-  flutter: ">=3.18.0-18.0.pre.54"
+  dart: ">=3.8.0 <4.0.0"
+  flutter: ">=3.27.0"
