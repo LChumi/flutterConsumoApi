@@ -10,7 +10,7 @@ class UsuarioApi {
   String baseUrl = ApiConstants.apiUrl;
 
   Future<UsuarioModel> login(String username, String password) async {
-    String loginUrl = '$baseUrl/usuarios/login/$username/$password';
+    String loginUrl = '$baseUrl/assist/login$username/$password';
     try {
       final response = await _dio.get(loginUrl);
       
